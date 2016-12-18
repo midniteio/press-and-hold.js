@@ -1,7 +1,7 @@
 const ACTIONS = { create: 'create', remove: 'remove' };
 
 /**
- * @pressAndHold
+ * @PressAndHold
  * @param {Object} configuration                - The configuration to this instance of pressAndHold
  * @param {integer} configuration.duration      - The amount of time to hold for to trigger success in ms
  * @param {integer} configuration.interval [1]  - The interval which the time elapsed gets checked in ms
@@ -20,7 +20,7 @@ const ACTIONS = { create: 'create', remove: 'remove' };
  * - The mouseup/keyup event data is provided to the callback as an argument
  */
 
-class PressAndHold {
+module.exports = class PressAndHold {
   constructor(configuration) {
     if (configuration.duration === undefined) {
       throw new Error('pressAndHold configuration error: A duration is required to instantiate');
@@ -109,4 +109,4 @@ class PressAndHold {
       actionHandler('mouseup', this.eventEnd);
     }
   }
-}
+};

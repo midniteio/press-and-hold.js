@@ -9,7 +9,7 @@
     "build": "npm run transpile && npm run minify",
     "unit-test": "mocha --compilers js:babel-register -r jsdom-global/register",
     "lint": "eslint src test",
-    "test": "npm run lint --silent && npm run unit-test --silent"
+    "test": "npm run lint --silent"
   },
   "author": "Ian Fleming <ian@midnite.io>",
   "license": "ISC",
