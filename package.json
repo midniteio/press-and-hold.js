@@ -1,0 +1,28 @@
+{
+  "name": "press-and-hold",
+  "version": "1.0.0",
+  "description": "Press and hold buttons to trigger actions with lifecycle events",
+  "main": "index.js",
+  "scripts": {
+    "transpile": "babel src/index.js -o lib/press-and-hold.js",
+    "minify": "uglifyjs lib/press-and-hold.js -m -c -o lib/press-and-hold-min.js",
+    "build": "npm run transpile && npm run minify",
+    "unit-test": "mocha --compilers js:babel-register -r jsdom-global/register",
+    "lint": "eslint src test",
+    "test": "npm run lint --silent && npm run unit-test --silent"
+  },
+  "author": "Ian Fleming <ian@midnite.io>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^6.1.2",
+    "babel-preset-env": "^1.1.4",
+    "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.12.2",
+    "jsdom": "^9.8.3",
+    "jsdom-global": "^2.1.0",
+    "mocha": "^3.2.0",
+    "uglify-js": "^2.7.5"
+  }
+}
