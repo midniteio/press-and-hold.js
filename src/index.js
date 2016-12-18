@@ -20,7 +20,7 @@ const ACTIONS = { create: 'create', remove: 'remove' };
  * - The mouseup/keyup event data is provided to the callback as an argument
  */
 
-export default class PressAndHold {
+class PressAndHold {
   constructor(configuration) {
     if (configuration.duration === undefined) {
       throw new Error('pressAndHold configuration error: A duration is required to instantiate');
