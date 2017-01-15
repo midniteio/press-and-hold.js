@@ -20,11 +20,7 @@ const ACTIONS = { create: 'create', remove: 'remove' };
  * - The mouseup/keyup event data is provided to the callback as an argument
  */
 
-<<<<<<< HEAD
-class PressAndHold {
-=======
-module.exports = class PressAndHold {
->>>>>>> 5bf6048e09329a015d94a4b520769a727edab530
+class PressAndHold { // eslint-disable-line no-unused-vars
   constructor(configuration) {
     if (configuration.duration === undefined) {
       throw new Error('pressAndHold configuration error: A duration is required to instantiate');
@@ -33,8 +29,15 @@ module.exports = class PressAndHold {
       throw new Error('pressAndHold configuration error: A keyCode or mousebutton is required to instantiate');
     }
 
-    Object.assign(this, configuration);
-    this.interval = this.interval || 1;
+    let defaults = {
+      interval: 1,
+      onStart: () => {},
+      onSuccess: () => {},
+      onCancel: () => {},
+      onTick: () => {}
+    };
+
+    Object.assign(this, defaults, configuration);
     this.completed = false;
     this.timer = null;
     this.eventStart = this.eventStart.bind(this);
